@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./listItem.scss";
 import {
   Add,
@@ -6,10 +6,28 @@ import {
   ThumbDownAltOutlined,
   ThumbUpAltOutlined,
 } from "@mui/icons-material";
+import axios from "axios";
 
-export default function ListItem({ index }) {
+export default function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
-  const trailer = "https://vimeo.com/296981135";
+  const [movie, setMovie] = useState({});
+
+  useEffect(()=>{
+    const getMovie = async ()=> {
+      try {
+        const res = await axios.get("/movies/find/" + item, {
+          headers: {
+            token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODZkMTkzZjkxNjU0NzJjMGFjNGEyZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NjczMTM0MiwiZXhwIjoxNjg3MTYzMzQyfQ.qeEcwKI2h4hPerFb-rHrGvzS0R25ewL5mrorH_1-D2w"
+          },
+        });
+        setMovie(res.data);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getMovie();
+  },[item])
 
   return (
     <div
@@ -19,12 +37,12 @@ export default function ListItem({ index }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="https://wrhsstampede.com/wp-content/uploads/2019/01/bird-box-900x507.jpg"
+        src={movie.img}
         alt=""
       />
       {isHovered && (
         <>
-          <video src={trailer} autoPlay={true} loop />
+          <video src={movie.trailer} autoPlay={true} loop />
           <div className="itemInfo">
             <div className="icons">
               <PlayArrow  className="icon"/>
@@ -33,15 +51,14 @@ export default function ListItem({ index }) {
               <ThumbDownAltOutlined  className="icon"/>
             </div>
             <div className="itemInfoTop">
-              <span>1 hour 14 minutes</span>
-              <span className="limit">+16</span>
-              <span>1999</span>
+              <span>{movie.duration}</span>
+              <span className="limit">+{movie.limit}</span>
+              <span>{movie.year}</span>
             </div>
             <div className="desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-              ipsam temporibus odit officiis iure voluptatem!
+              {movie.desc}
             </div>
-            <div className="genre">Thriller</div>
+            <div className="genre">{movie.genre}</div>
           </div>
         </>
       )}
