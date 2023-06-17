@@ -48,3 +48,16 @@ export const userData = [
       "Active User": 2390,
     },
   ];
+
+  export const userRows = [
+    { id: 1, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 2, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 3, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 4, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 5, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 6, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 7, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 8, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 9, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+    { id: 10, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
+  ];
