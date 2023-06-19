@@ -61,3 +61,17 @@ export const userData = [
     { id: 9, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
     { id: 10, username: 'John Wick', avatar: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", email:"john@wick.com", status:"active", transaction:"$120.00", },
   ];
+
+
+  export const productRows = [
+    { id: 1, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 2, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 3, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 4, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 5, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 6, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 7, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 8, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 9, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+    { id: 10, name: 'Apple Airpods', img: "https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg", stock:123, status:"active", price:"$120.00", },
+  ];
