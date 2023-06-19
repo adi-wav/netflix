@@ -1,5 +1,7 @@
+import { List } from "@mui/material";
 import "./sidebar.css"
-import { LineStyle, Timeline, TrendingUp } from "@mui/icons-material";
+import {Link} from "react-router-dom"
+import { AddToQueue, AttachMoney, ChatBubbleOutline, DynamicFeed, GraphicEq, LineStyle, MailOutline, PermIdentity, PlayCircleOutline, QueuePlayNext, Report, Storefront, Timeline, TrendingUp, WorkOutline } from "@mui/icons-material";
 
 export default function Sidebar() {
   return (
@@ -25,20 +27,24 @@ export default function Sidebar() {
         <div className="sidebarMenu">
             <h3 className="sidebarTitle">Quick Menu</h3>
             <ul className="sidebarList">
+                <Link to="/users" className="link">
+                    <li className="sidebarListItem">
+                        <PermIdentity className="sidebarIcon"/>
+                        Users
+                    </li>
+                </Link>
+                <Link to="/products" className="link">
+                    <li className="sidebarListItem">
+                        <Storefront className="sidebarIcon"/>
+                        Products
+                    </li>
+                </Link>
                 <li className="sidebarListItem">
-                    <LineStyle className="sidebarIcon"/>
-                    Users
-                </li>
-                <li className="sidebarListItem">
-                    <Timeline className="sidebarIcon"/>
-                    Products
-                </li>
-                <li className="sidebarListItem">
-                    <TrendingUp className="sidebarIcon"/>
+                    <AttachMoney className="sidebarIcon"/>
                     Transactions
                 </li>
                 <li className="sidebarListItem">
-                    <TrendingUp className="sidebarIcon"/>
+                    <GraphicEq className="sidebarIcon"/>
                     Reports
                 </li>
             </ul>
@@ -47,15 +53,15 @@ export default function Sidebar() {
             <h3 className="sidebarTitle">Notifications</h3>
             <ul className="sidebarList">
                 <li className="sidebarListItem">
-                    <LineStyle className="sidebarIcon"/>
+                    <MailOutline className="sidebarIcon"/>
                     Mail
                 </li>
                 <li className="sidebarListItem">
-                    <Timeline className="sidebarIcon"/>
+                    <DynamicFeed className="sidebarIcon"/>
                     Feedback
                 </li>
                 <li className="sidebarListItem">
-                    <TrendingUp className="sidebarIcon"/>
+                    <ChatBubbleOutline className="sidebarIcon"/>
                     Messages
                 </li>
             </ul>
@@ -64,7 +70,7 @@ export default function Sidebar() {
             <h3 className="sidebarTitle">Staff</h3>
             <ul className="sidebarList">
                 <li className="sidebarListItem">
-                    <LineStyle className="sidebarIcon"/>
+                    <WorkOutline className="sidebarIcon"/>
                     Manage
                 </li>
                 <li className="sidebarListItem">
@@ -72,7 +78,7 @@ export default function Sidebar() {
                     Analytics
                 </li>
                 <li className="sidebarListItem">
-                    <TrendingUp className="sidebarIcon"/>
+                    <Report className="sidebarIcon"/>
                     Reports
                 </li>
             </ul>
