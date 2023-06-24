@@ -34,10 +34,10 @@ function App() {
           <Route path="/newUser">
             <NewUser/>
           </Route>
-          <Route path="/products">
+          <Route path="/movies">
             <ProductList/>
           </Route>
-          <Route path="/product/:productId">
+          <Route path="/movies/:productId">
             <Product/>
           </Route>
           <Route path="/newproduct">
