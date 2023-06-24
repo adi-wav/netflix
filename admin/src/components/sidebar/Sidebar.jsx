@@ -1,7 +1,7 @@
 import { List } from "@mui/material";
 import "./sidebar.css"
 import {Link} from "react-router-dom"
-import { AddToQueue, AttachMoney, ChatBubbleOutline, DynamicFeed, GraphicEq, LineStyle, MailOutline, PermIdentity, PlayCircleOutline, QueuePlayNext, Report, Storefront, Timeline, TrendingUp, WorkOutline } from "@mui/icons-material";
+import { AddToQueue, AttachMoney, ChatBubbleOutline, DynamicFeed, GraphicEq, LineStyle, MailOutline, PermIdentity, PlayArrow, PlayArrowRounded, PlayCircleOutline, QueuePlayNext, Report, Storefront, Timeline, TrendingUp, WorkOutline } from "@mui/icons-material";
 
 export default function Sidebar() {
   return (
@@ -35,10 +35,10 @@ export default function Sidebar() {
                         Users
                     </li>
                 </Link>
-                <Link to="/products" className="link">
+                <Link to="/movies" className="link">
                     <li className="sidebarListItem">
-                        <Storefront className="sidebarIcon"/>
-                        Products
+                        <PlayCircleOutline className="sidebarIcon"/>
+                        Movies
                     </li>
                 </Link>
                 <li className="sidebarListItem">

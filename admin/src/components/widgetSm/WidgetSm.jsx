@@ -1,51 +1,41 @@
+import { useEffect, useState } from "react";
 import "./widgetSm.css"
 import {Visibility} from '@mui/icons-material';
+import axios from "axios";
 
 export default function WidgetSm() {
+    const [newUsers, setNewUsers] = useState([]);
+
+    useEffect(()=>{
+        const getNewUsers = async ()=>{
+            try {
+                const res = await axios.get("/users?new=true",{headers:{
+                    token:
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODZkMTkzZjkxNjU0NzJjMGFjNGEyZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NzIzMTY4NiwiZXhwIjoxNjg3NjYzNjg2fQ.h0GffpDR1YoVwyVm5fguk5mZh8WlMxjZZmvM8hd0Jnw"
+                  },
+                });
+                setNewUsers(res.data);
+            } catch (err) {
+                console.log(err)
+            }
+        };
+        getNewUsers();
+    },[])
   return (
     <div className="widgetSm">
         <span className="widgetSmTitle">New Join Members</span>
         <ul className="widgetSmList">
+            {newUsers.map((user)=>(
             <li className="widgetSmListItem">
-                <img src="https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg" alt="" className="widgetSmImg" />
+                    <img src={user.profilePic || "https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg"} alt="" className="widgetSmImg" />
                 <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Bludu Doo</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
+                    <span className="widgetSmUsername">{user.username}</span>
+                    {/* <span className="widgetSmUserTitle">Software Engineer</span> */}
                 </div>
                 <button className="widgetSmButton"><Visibility className="widgetSmIcon"/> Display</button>
             </li>
-            <li className="widgetSmListItem">
-                <img src="https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg" alt="" className="widgetSmImg" />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Bludu Doo</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton"><Visibility className="widgetSmIcon"/> Display</button>
-            </li>
-            <li className="widgetSmListItem">
-                <img src="https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg" alt="" className="widgetSmImg" />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Bludu Doo</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton"><Visibility className="widgetSmIcon"/> Display</button>
-            </li>
-            <li className="widgetSmListItem">
-                <img src="https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg" alt="" className="widgetSmImg" />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Bludu Doo</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton"><Visibility className="widgetSmIcon"/> Display</button>
-            </li>
-            <li className="widgetSmListItem">
-                <img src="https://pbs.twimg.com/media/EemH8x6WkAc6Vi2.jpg" alt="" className="widgetSmImg" />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Bludu Doo</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton"><Visibility className="widgetSmIcon"/> Display</button>
-            </li>
+                    ))}
+            
         </ul>
       
     </div>
