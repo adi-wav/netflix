@@ -1,8 +1,8 @@
-import "./newUser.css"
+import "./newUser.css";
 
 export default function NewUser() {
   return (
-    <div className='newUser'>
+    <div className="newUser">
       <h1 className="newUserTitle">New User</h1>
       <form className="newUserForm">
         <div className="newUserItem">
@@ -11,23 +11,23 @@ export default function NewUser() {
         </div>
         <div className="newUserItem">
           <label>Full Name</label>
-          <input type="text" placeholder="john smith" />
+          <input type="text" placeholder="John Smith" />
         </div>
         <div className="newUserItem">
           <label>Email</label>
-          <input type="email" placeholder="john@wick.com" />
+          <input type="email" placeholder="john@gmail.com" />
         </div>
         <div className="newUserItem">
           <label>Password</label>
-          <input type="password" placeholder="*******" />
+          <input type="password" placeholder="password" />
         </div>
         <div className="newUserItem">
           <label>Phone</label>
-          <input type="text" placeholder="9876543210" />
+          <input type="text" placeholder="+1 123 456 78" />
         </div>
         <div className="newUserItem">
           <label>Address</label>
-          <input type="text" placeholder="Blabli Nagar" />
+          <input type="text" placeholder="New York | USA" />
         </div>
         <div className="newUserItem">
           <label>Gender</label>
@@ -36,8 +36,8 @@ export default function NewUser() {
             <label for="male">Male</label>
             <input type="radio" name="gender" id="female" value="female" />
             <label for="female">Female</label>
-            <input type="radio" name="gender" id="others" value="others" />
-            <label for="others">Others</label>
+            <input type="radio" name="gender" id="other" value="other" />
+            <label for="other">Other</label>
           </div>
         </div>
         <div className="newUserItem">
@@ -50,5 +50,5 @@ export default function NewUser() {
         <button className="newUserButton">Create</button>
       </form>
     </div>
-  )
+  );
 }

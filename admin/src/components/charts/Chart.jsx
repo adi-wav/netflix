@@ -1,22 +1,39 @@
-import "./chart.css"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import "./featuredInfo.css";
+import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 
-export default function Chart({title, data, dataKey, grid}) {
-
+export default function FeaturedInfo() {
   return (
-    <div>
-      <div className="chart">
-        <h3 className="chartTitle">{title}</h3>
-        <ResponsiveContainer width="100%" aspect={4/1}>
-          <LineChart data={data}>
-            <XAxis dataKey="name" stroke="#5550bd"/>
-            <YAxis/>
-            <Line type="monotone" dataKey={dataKey} stroke="#5550bd"/>
-            <Tooltip/>
-            {grid && <CartesianGrid stroke="#e0dfdf" strokeDasharray="5 5"/>}
-          </LineChart>
-        </ResponsiveContainer>
+    <div className="featured">
+      <div className="featuredItem">
+        <span className="featuredTitle">Revanue</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">$2,415</span>
+          <span className="featuredMoneyRate">
+            -11.4 <ArrowDownward  className="featuredIcon negative"/>
+          </span>
+        </div>
+        <span className="featuredSub">Compared to last month</span>
+      </div>
+      <div className="featuredItem">
+        <span className="featuredTitle">Sales</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">$4,415</span>
+          <span className="featuredMoneyRate">
+            -1.4 <ArrowDownward className="featuredIcon negative"/>
+          </span>
+        </div>
+        <span className="featuredSub">Compared to last month</span>
+      </div>
+      <div className="featuredItem">
+        <span className="featuredTitle">Cost</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">$2,225</span>
+          <span className="featuredMoneyRate">
+            +2.4 <ArrowUpward className="featuredIcon"/>
+          </span>
+        </div>
+        <span className="featuredSub">Compared to last month</span>
       </div>
     </div>
-  )
+  );
 }
